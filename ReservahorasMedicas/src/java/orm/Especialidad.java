@@ -13,6 +13,7 @@
  */
 package orm;
 
+import com.google.gson.annotations.Expose;
 import java.io.Serializable;
 import javax.persistence.*;
 @Entity
@@ -41,10 +42,12 @@ public class Especialidad implements Serializable {
 	@Column(name="id", nullable=false)	
 	@Id	
 	@GeneratedValue(generator="ORM_ESPECIALIDAD_ID_GENERATOR")	
-	@org.hibernate.annotations.GenericGenerator(name="ORM_ESPECIALIDAD_ID_GENERATOR", strategy="native")	
+	@org.hibernate.annotations.GenericGenerator(name="ORM_ESPECIALIDAD_ID_GENERATOR", strategy="native")
+        @Expose
 	private int id;
 	
-	@Column(name="nombre", nullable=true, length=50)	
+	@Column(name="nombre", nullable=true, length=50)
+        @Expose
 	private String nombre;
 	
 	@OneToMany(mappedBy="especialidad", targetEntity=orm.Especialidad_medico.class)	

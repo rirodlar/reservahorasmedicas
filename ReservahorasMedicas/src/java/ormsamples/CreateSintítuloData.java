@@ -35,6 +35,7 @@ public class CreateSintítuloData {
 		PersistentTransaction t = orm.SintítuloPersistentManager.instance().getSession().beginTransaction();
 		try {
 			orm.Tipo_hora lormTipo_hora = orm.Tipo_horaDAO.createTipo_hora();
+                        
 			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : reserva_bloque
 			orm.Tipo_horaDAO.save(lormTipo_hora);
 			orm.Reserva lormReserva = orm.ReservaDAO.createReserva();

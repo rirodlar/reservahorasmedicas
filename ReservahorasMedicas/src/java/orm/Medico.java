@@ -13,6 +13,7 @@
  */
 package orm;
 
+import com.google.gson.annotations.Expose;
 import java.io.Serializable;
 import javax.persistence.*;
 @Entity
@@ -44,12 +45,14 @@ public class Medico implements Serializable {
 	@Column(name="id", nullable=false)	
 	@Id	
 	@GeneratedValue(generator="ORM_MEDICO_ID_GENERATOR")	
-	@org.hibernate.annotations.GenericGenerator(name="ORM_MEDICO_ID_GENERATOR", strategy="native")	
+	@org.hibernate.annotations.GenericGenerator(name="ORM_MEDICO_ID_GENERATOR", strategy="native")
+        @Expose
 	private int id;
 	
 	@OneToOne(targetEntity=orm.Persona.class, fetch=FetchType.LAZY)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
-	@JoinColumns({ @JoinColumn(name="persona_id", nullable=false) })	
+	@JoinColumns({ @JoinColumn(name="persona_id", nullable=false) })
+        @Expose
 	public orm.Persona persona;
 	
 	@OneToMany(mappedBy="medico", targetEntity=orm.Hora_medica.class)	

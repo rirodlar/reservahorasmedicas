@@ -4,13 +4,13 @@
         <listener-class>com.sun.xml.ws.transport.http.servlet.WSServletContextListener</listener-class>
     </listener>
     <servlet>
-        <servlet-name>ReservaHorasMedicas</servlet-name>
+        <servlet-name>ReservaHoraMedicaService</servlet-name>
         <servlet-class>com.sun.xml.ws.transport.http.servlet.WSServlet</servlet-class>
         <load-on-startup>1</load-on-startup>
     </servlet>
     <servlet-mapping>
-        <servlet-name>ReservaHorasMedicas</servlet-name>
-        <url-pattern>/ReservaHorasMedicas</url-pattern>
+        <servlet-name>ReservaHoraMedicaService</servlet-name>
+        <url-pattern>/ReservaHoraMedicaService</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jax-ws xmlns="http://www.netbeans.org/ns/jax-ws/1">
   <services>
-    <service name="ReservaHorasMedicas">
-      <implementation-class>org.me.reserva.ReservaHorasMedicas</implementation-class>
+    <service name="ReservaHoraMedicaService">
+      <implementation-class>service.ws.ReservaHoraMedicaService</implementation-class>
     </service>
   </services>
   <clients/>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+ <definitions 
+ xmlns="http://schemas.xmlsoap.org/wsdl/" 
+ xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" 
+ xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+ xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="ReservaHorasMedicas" targetNamespace="http://reserva.me.org/" xmlns:tns="http://reserva.me.org/" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:fi="http://java.sun.com/xml/ns/wsit/2006/09/policy/fastinfoset/service" xmlns:tcp="http://java.sun.com/xml/ns/wsit/2006/09/policy/soaptcp/service" xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702" 
+ >
+    <message name="hello"/>
+    <message name="helloResponse"/>
+    <message name="ObtenerPorcentajeOcupacionBox"/>
+    <message name="ObtenerPorcentajeOcupacionBoxResponse"/>
+    <message name="ReservarHoraMedicaControl"/>
+    <message name="ReservarHoraMedicaControlResponse"/>
+    <portType name="ReservaHorasMedicas">
+        <operation name="hello">
+            <input message="tns:hello"/>
+            <output message="tns:helloResponse"/>
+        </operation>
+        <operation name="ObtenerPorcentajeOcupacionBox">
+            <input message="tns:ObtenerPorcentajeOcupacionBox"/>
+            <output message="tns:ObtenerPorcentajeOcupacionBoxResponse"/>
+        </operation>
+        <operation name="ReservarHoraMedicaControl">
+            <input message="tns:ReservarHoraMedicaControl"/>
+            <output message="tns:ReservarHoraMedicaControlResponse"/>
+        </operation>
+    </portType>
+    <binding name="ReservaHorasMedicasPortBinding" type="tns:ReservaHorasMedicas">
+        <wsp:PolicyReference URI="#ReservaHorasMedicasPortBindingPolicy"/>
+        <operation name="hello">
+            <input/>
+            <output/>
+        </operation>
+        <operation name="ObtenerPorcentajeOcupacionBox">
+            <input/>
+            <output/>
+        </operation>
+        <operation name="ReservarHoraMedicaControl">
+            <input/>
+            <output/>
+        </operation>
+    </binding>
+    <service name="ReservaHorasMedicas">
+        <port name="ReservaHorasMedicasPort" binding="tns:ReservaHorasMedicasPortBinding"/>
+    </service>
+    <wsp:Policy wsu:Id="ReservaHorasMedicasPortBindingPolicy">
+        <wsp:ExactlyOne>
+            <wsp:All/>
+        </wsp:ExactlyOne>
+    </wsp:Policy>
+    <wsp:Policy wsu:Id="ReservaHorasMedicasPortBinding_ObtenerPorcentajeOcupacionBox_Input_Policy">
+        <wsp:ExactlyOne>
+            <wsp:All>
+                <sp:EncryptedParts>
+                    <sp:Body/>
+                    <sp:Body/>
+                </sp:EncryptedParts>
+                <sp:SignedParts>
+                    <sp:Body/>
+                    <sp:Body/>
+                </sp:SignedParts>
+            </wsp:All>
+        </wsp:ExactlyOne>
+    </wsp:Policy>
+    <wsp:Policy wsu:Id="ReservaHorasMedicasPortBinding_ObtenerPorcentajeOcupacionBox_Output_Policy">
+        <wsp:ExactlyOne>
+            <wsp:All>
+                <sp:EncryptedParts>
+                    <sp:Body/>
+                    <sp:Body/>
+                </sp:EncryptedParts>
+                <sp:SignedParts>
+                    <sp:Body/>
+                    <sp:Body/>
+                </sp:SignedParts>
+            </wsp:All>
+        </wsp:ExactlyOne>
+    </wsp:Policy>
+    <wsp:Policy wsu:Id="ReservaHorasMedicasPortBinding_ReservarHoraMC_Input_Policy">
+        <wsp:ExactlyOne>
+            <wsp:All>
+                <sp:EncryptedParts>
+                    <sp:Body/>
+                </sp:EncryptedParts>
+                <sp:SignedParts>
+                    <sp:Body/>
+                </sp:SignedParts>
+            </wsp:All>
+        </wsp:ExactlyOne>
+    </wsp:Policy>
+    <wsp:Policy wsu:Id="ReservaHorasMedicasPortBinding_ReservarHoraMC_Output_Policy">
+        <wsp:ExactlyOne>
+            <wsp:All>
+                <sp:EncryptedParts>
+                    <sp:Body/>
+                </sp:EncryptedParts>
+                <sp:SignedParts>
+                    <sp:Body/>
+                </sp:SignedParts>
+            </wsp:All>
+        </wsp:ExactlyOne>
+    </wsp:Policy>
+</definitions>
